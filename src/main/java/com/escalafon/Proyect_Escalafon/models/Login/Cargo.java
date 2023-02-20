@@ -11,11 +11,11 @@ import lombok.ToString;
 
 public class Cargo {
     @Getter @Setter
-    @Column(name = "idCargo") @Id
+    @Column(name = "idcargo") @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idCargo;
     @Getter @Setter
-    @Column(name = "tipoCargo")
+    @Column(name = "tipocargo")
     private String tipoCargo;
     @Getter @Setter
     @Column(name = "estado")

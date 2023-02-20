@@ -1,13 +1,13 @@
 package com.escalafon.Proyect_Escalafon.dao;
 
 import com.escalafon.Proyect_Escalafon.models.Login.Cargo;
-import com.escalafon.Proyect_Escalafon.models.Login.Usuario;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+
 
 @Repository
 @Transactional
@@ -17,9 +17,16 @@ public class CargoDAOImp implements CargoDAO{
 
 
     @Override
+    @Transactional
     public List<Cargo> getCargos() {
         String query = "FROM Cargo";
-        return entityManager.createQuery(query).getResultList();
+        try {
+            return entityManager.createQuery(query).getResultList();
+
+        }catch (Exception e){
+            return null;
+        }
+
     }
 
     @Override
@@ -36,5 +43,12 @@ public class CargoDAOImp implements CargoDAO{
     @Override
     public void updateCargo(int idCargo, Cargo cargo) {
 
+        Cargo selectcargo = entityManager.find(Cargo.class, idCargo);
+        selectcargo.setTipoCargo(cargo.getTipoCargo());
+        entityManager.merge(selectcargo);
     }
+
+
+
+
 }

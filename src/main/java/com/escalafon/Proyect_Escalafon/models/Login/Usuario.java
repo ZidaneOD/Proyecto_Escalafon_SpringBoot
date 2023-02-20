@@ -20,15 +20,15 @@ import java.util.Date;
 public class Usuario {
 
     @Getter @Setter
-    @Column(name = "idUsuario") @Id
+    @Column(name = "idusuario") @Id
     private String idUsuario;
 
     @Getter @Setter
-    @Column(name = "apellidoPat")
+    @Column(name = "apellidopat")
     private String apellidoPat;
 
     @Getter @Setter
-    @Column(name = "apellidoMat")
+    @Column(name = "apellidomat")
     private String apellidoMat;
 
     @Getter @Setter
@@ -36,7 +36,7 @@ public class Usuario {
     private String nombres;
 
     @Getter @Setter
-    @Column(name = "fechNaci")
+    @Column(name = "fechnaci")
     private Date fechNaci;
 
     @Getter @Setter
@@ -44,7 +44,7 @@ public class Usuario {
     private String correo;
 
     @Getter @Setter
-    @Column(name = "logiUsua")
+    @Column(name = "logiusua")
     private String logiUsua;
 
     @Getter @Setter
@@ -52,7 +52,7 @@ public class Usuario {
     private String password;
 
     @Getter @Setter
-    @Column(name = "idCargo")
+    @Column(name = "idcargo")
     private Long idCargo;
 
     @Getter @Setter
