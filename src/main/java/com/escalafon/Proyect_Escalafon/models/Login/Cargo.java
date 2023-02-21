@@ -10,14 +10,14 @@ import lombok.ToString;
 @ToString
 
 public class Cargo {
-    @Getter @Setter
-    @Column(name = "idcargo") @Id
+    @Getter
+    @Setter
+    @Column(name = "idcargo")
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idCargo;
-    @Getter @Setter
+    @Getter
+    @Setter
     @Column(name = "tipocargo")
     private String tipoCargo;
-    @Getter @Setter
-    @Column(name = "estado")
-    private int estado;
 }

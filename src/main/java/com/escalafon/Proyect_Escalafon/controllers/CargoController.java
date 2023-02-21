@@ -30,20 +30,13 @@ public class CargoController {
     @RequestMapping(value = "api/listCargo", method = RequestMethod.GET)
     public List<Cargo> listCargo() {
 
-            return cargoDAO.getCargos();
+       return cargoDAO.getCargos();
 
     }
     @RequestMapping(value = "api/updateCargo/{idCargo}",method = RequestMethod.PUT)//Editar usuario
-    public void updateCargo(@RequestHeader(value = "Authorization")@PathVariable int idCargo , @PathVariable Cargo cargo){//Falta el metodo modificar
+    public void updateCargo(@PathVariable int idCargo , @PathVariable Cargo cargo){
 
         cargoDAO.updateCargo(idCargo,cargo);
 
     }
-
-    @RequestMapping(value = "api/updateCargo", method = RequestMethod.PUT)//Ingresar Usuario
-    public void updateCargo(@RequestBody Cargo cargo){
-
-        cargoDAO.insertCargo(cargo);
-    }
-
 }

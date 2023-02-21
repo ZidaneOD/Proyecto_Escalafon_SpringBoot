@@ -5,7 +5,7 @@ $(document).ready(function () {
 
 });
 
-async function cargarCargos() {
+async function cargarCargos(){
 
     const request = await fetch('api/listCargo', {
         method: 'GET',
@@ -15,13 +15,16 @@ async function cargarCargos() {
 
 
     let listadoHTML = '';
+    var i=0;
     for (let cargo of cargos) {
+
         let botonEliminar = '<a href="#" onclick="deleteCargo(' + cargo.idCargo + ')" class="btn btn-danger btn-circle btn-sm"><i class="fas fa-trash"></iclassName </a>';
 
-        CargoHTL = '<tr><td>' + cargo.idCargo + '</td><td>' +cargo.tipoCargo
-            + '</td><td>' +cargo.estado + '</td><td>'+ botonEliminar + '</td></tr>';
+        CargoHTL = '<tr><td>' + cargo[i] + '</td><td>' +cargo[i]
+            + '</td><td>'+ botonEliminar + '</td></tr>';
 
         listadoHTML += CargoHTL;
+        i++;
     }
     document.querySelector('#cargos tbody').outerHTML = listadoHTML
 }
@@ -39,3 +42,5 @@ async function deleteCargo(id) {
         headers: getHeaders()
     });
 }
+
+

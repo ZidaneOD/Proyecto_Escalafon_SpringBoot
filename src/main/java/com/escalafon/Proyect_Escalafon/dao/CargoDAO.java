@@ -7,7 +7,10 @@ import java.util.List;
 
 public interface CargoDAO {
     List<Cargo> getCargos();
+    List<Cargo> getList();
     void deleteCargo(int idCargo);
     void insertCargo(Cargo cargo);
     void updateCargo(int idCargo,Cargo cargo);
+
+
 }
