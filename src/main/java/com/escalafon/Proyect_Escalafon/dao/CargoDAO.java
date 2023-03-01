@@ -4,13 +4,14 @@ import com.escalafon.Proyect_Escalafon.models.Login.Cargo;
 import com.escalafon.Proyect_Escalafon.models.Login.Usuario;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface CargoDAO {
     List<Cargo> getCargos();
-    List<Cargo> getList();
     void deleteCargo(int idCargo);
     void insertCargo(Cargo cargo);
-    void updateCargo(int idCargo,Cargo cargo);
+    void updateCargo(Cargo cargo);
+    Cargo obtenerPorId(int id);
 
 
 }

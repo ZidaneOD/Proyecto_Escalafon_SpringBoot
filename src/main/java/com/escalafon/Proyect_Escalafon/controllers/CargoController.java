@@ -3,6 +3,7 @@ package com.escalafon.Proyect_Escalafon.controllers;
 import com.escalafon.Proyect_Escalafon.dao.CargoDAO;
 import com.escalafon.Proyect_Escalafon.models.Login.Cargo;
 import com.escalafon.Proyect_Escalafon.models.Login.Usuario;
+import jakarta.websocket.server.PathParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -33,10 +34,15 @@ public class CargoController {
        return cargoDAO.getCargos();
 
     }
-    @RequestMapping(value = "api/updateCargo/{idCargo}",method = RequestMethod.PUT)//Editar usuario
-    public void updateCargo(@PathVariable int idCargo , @PathVariable Cargo cargo){
+    @RequestMapping(value = "api/updateCargo",method = RequestMethod.PUT)//Editar usuario
+    public void updateCargo(@RequestBody Cargo cargo){
 
-        cargoDAO.updateCargo(idCargo,cargo);
+        cargoDAO.updateCargo(cargo);
 
     }
+    @RequestMapping(value = "api/ObtenerUnDato/{id}", method = RequestMethod.GET)
+    public Cargo ObtenerUnDato(@PathVariable int id) {
+        return cargoDAO.obtenerPorId(id);
+    }
+
 }

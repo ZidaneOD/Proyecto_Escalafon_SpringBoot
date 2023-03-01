@@ -20,4 +20,9 @@ public class Cargo {
     @Setter
     @Column(name = "tipocargo")
     private String tipoCargo;
+
+    @Getter
+    @Setter
+    @Column(name = "estado")
+    private int estado;
 }

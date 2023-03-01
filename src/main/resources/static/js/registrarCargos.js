@@ -23,7 +23,7 @@ async function updateCargo(){
     datos.idCargo=document.getElementById("txtidCargo").value;
     datos.tipoCargo=document.getElementById("txtTipoCargo").value;
 
-    const request = await fetch('api/updateCargo/'+ datos.idCargo, {
+    const request = await fetch('api/updateCargo',{
         method: 'PUT',
         headers: {
             'Accept': 'application/json',

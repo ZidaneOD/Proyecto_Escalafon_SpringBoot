@@ -11,7 +11,8 @@ async function cargarCargos(){
         method: 'GET',
         headers: getHeaders()
     });
-    const cargos = await request.json();
+
+    const cargos =  await request.json();
 
 
     let listadoHTML = '';
@@ -20,7 +21,7 @@ async function cargarCargos(){
 
         let botonEliminar = '<a href="#" onclick="deleteCargo(' + cargo.idCargo + ')" class="btn btn-danger btn-circle btn-sm"><i class="fas fa-trash"></iclassName </a>';
 
-        CargoHTL = '<tr><td>' + cargo[i] + '</td><td>' +cargo[i]
+        CargoHTL = '<tr><td>' + cargo.idCargo + '</td><td>' +cargo.tipoCargo
             + '</td><td>'+ botonEliminar + '</td></tr>';
 
         listadoHTML += CargoHTL;
